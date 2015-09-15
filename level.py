@@ -94,7 +94,7 @@ def on_message(msg, server):
     if match:
         try:
             level = int(match[0])
-            if level > 16 or level < 16:
+            if level > 16 or level < 1:
                 return "Please enter a valid level. (1 <-> 16)"
             else:
                 return get_text(level)
@@ -103,3 +103,5 @@ def on_message(msg, server):
     else:
         return
 
+print on_message({"text":"!level 10"},1)
+print on_message({"text":"!level 100"},1)
