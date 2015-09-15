@@ -102,6 +102,3 @@ def on_message(msg, server):
             return "Please enter a valid number for the level"
     else:
         return
-
-print on_message({"text":"!level 10"},1)
-print on_message({"text":"!level 100"},1)
