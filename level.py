@@ -78,12 +78,12 @@ levels = {
 def get_text(level):
     global levels
     ap_text = "AP Required: {}".format(levels[level]["ap"])
-    if levels[level]['badges']:
+    try:
         badge_text = "Badges Required: "
         for badge in levels[level]['badges']:
             badge_text += "{} x :badge_{}:, ".format(levels[level]['badges'][badge], badge)
         badge_text = badge_text[:-2]
-    else:
+    except KeyError:
         badge_text = "No Badges required for level {}".format(level)
     return "Requirements for level {}:\n{}\n{}".format(level, ap_text, badge_text)
 
